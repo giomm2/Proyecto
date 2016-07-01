@@ -6,26 +6,17 @@ public class EnemyProximity : MonoBehaviour
 {
 
     // Use this for initialization
-    public GameObject objects;
+    public GameObject objects ;
     public string nameTrigger;
     public AudioClip audio;
     private AudioSource source { get { return GetComponent<AudioSource>(); } }
     public int timer;
     private bool flagEnemy = true;
     private int enemyEntry;
-    void Awake()
-    {
-        objects.SetActive(false);
-
-    }
 
     // Update is called once per frame
     void Update()
     {
-
-
-
-
     }
 
 
