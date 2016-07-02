@@ -7,6 +7,7 @@ public class PlayerMovements : MonoBehaviour {
 	private float inputH;
 	private float inputV;
 	public Rigidbody Rbody;
+ 
 
 	// Use this for initialization
 	void Start () {
