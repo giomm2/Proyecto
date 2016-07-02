@@ -13,11 +13,17 @@ public class EnemyProximity : MonoBehaviour
     public int timer;
     private bool flagEnemy = true;
     private int enemyEntry;
+    private ChangeCamera camera = new ChangeCamera();
+    public Camera firstCamera;
+    public Camera thirdCamera;
 
     // Update is called once per frame
     void Update()
     {
-    }
+      
+
+        
+        }
 
 
 
@@ -31,6 +37,12 @@ public class EnemyProximity : MonoBehaviour
 
             if ((int)Time.time >= timer && flagEnemy == true)
             {
+                if (thirdCamera.enabled == true)
+                {
+                    thirdCamera.enabled = false;
+                    firstCamera.enabled = true;
+
+                }
                  enemyEntry = (int)Time.time+7;
                 objects.SetActive(true);
                 gameObject.AddComponent<AudioSource>();
