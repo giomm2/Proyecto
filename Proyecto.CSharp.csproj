@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Cargado.cs" />
     <Compile Include="Assets\Scripts\CargarPartida.cs" />
     <Compile Include="Assets\Scripts\ChangeScene.cs" />
+    <Compile Include="Assets\Scripts\DayNightTransition.cs" />
     <Compile Include="Assets\Scripts\MoveScripts\DoorsMovements.cs" />
     <Compile Include="Assets\Scripts\MoveScripts\MoveObjects.cs" />
     <Compile Include="Assets\Scripts\Objective1.cs" />
