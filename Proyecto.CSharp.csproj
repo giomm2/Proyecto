@@ -69,7 +69,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CameraChange.cs" />
     <Compile Include="Assets\Scripts\Cargado.cs" />
     <Compile Include="Assets\Scripts\CargarPartida.cs" />
     <Compile Include="Assets\Scripts\ChangeScene.cs" />
@@ -103,6 +102,7 @@
     <Compile Include="Assets\_MoveScripts\ChangeCamera.cs" />
     <Compile Include="Assets\_MoveScripts\DoorMovement.cs" />
     <Compile Include="Assets\_MoveScripts\EnemyProximity.cs" />
+    <Compile Include="Assets\_MoveScripts\Levels.cs" />
     <Compile Include="Assets\_MoveScripts\OpenDoor.cs" />
     <Compile Include="Assets\_MoveScripts\PictureMovement.cs" />
     <Compile Include="Assets\_MoveScripts\Sounds.cs" />
