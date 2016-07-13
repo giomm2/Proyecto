@@ -13,13 +13,12 @@ public class DoorMovement : MonoBehaviour
     public AudioClip audioClose;
     private AudioSource source { get { return GetComponent<AudioSource>(); } }
     public int timer;
-
     private int flag = 3;
     private bool flag2 = true;
     private bool flag3 = true;
 
-
-    void OnTriggerEnter(Collider collider)
+   
+        void OnTriggerEnter(Collider collider)
     {
         if (collider.name.Equals(nameTrigger))
         {
@@ -44,10 +43,12 @@ public class DoorMovement : MonoBehaviour
                     source.clip = audioOpen;
                     source.playOnAwake = false;
                     source.PlayOneShot(audioOpen);
-
+                  
                     flag2 = false;
 
                 }
+
+
 
 
             }
@@ -75,7 +76,7 @@ public class DoorMovement : MonoBehaviour
                 source.playOnAwake = false;
                 source.PlayOneShot(audioClose);
                 flag = 3;
-
+            
                 flag3 = false;
 
             }

@@ -5,11 +5,7 @@ public class ChangeCamera : MonoBehaviour
 {
     public Camera firstCamera;
     public Camera thirdCamera;
-    // Use this for initialization
-    void Start()
-    {
-
-    }
+    
 
     // Update is called once per frame
     void Update()

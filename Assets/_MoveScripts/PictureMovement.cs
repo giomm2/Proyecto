@@ -12,9 +12,16 @@ public class PictureMovement : MonoBehaviour
     public string nameTrigger;
     public AudioClip audio;
     private AudioSource source { get { return GetComponent<AudioSource>(); } }
-    public int timer;
+    private int timer;
     private bool Flag = true;
+    private int randomTime;
+    private System.Random random = new System.Random();
 
+    void Start() {
+
+        RandomTime();
+
+    }
     void OnTriggerEnter(Collider collider)
     {
 
@@ -31,8 +38,51 @@ public class PictureMovement : MonoBehaviour
                 source.PlayOneShot(audio);
                 Flag = false;
 
+                if (randomTime == 1)
+                {
+
+                    timer = random.Next((int)Time.time, 350);
+
+                }
+
+                else if (randomTime == 2)
+                {
+                    timer = random.Next((int)Time.time, 230);
+                }
+                else
+                {
+                    timer = random.Next((int)Time.time, 60);
+
+                }
+
             }
         }
+
+    }
+
+
+    public void RandomTime() {
+
+        Level level = new Level();
+        randomTime = level.GetTimers();
+
+        if (randomTime == 1)
+        {
+
+            timer = 120;
+
+        }
+
+        else if (randomTime == 2)
+        {
+            timer = 100;
+        }
+        else
+        {
+            timer = 30;
+
+        }
+
 
     }
 
