@@ -14,15 +14,11 @@ public class SoundBottons : MonoBehaviour {
 
     public Text []txt;
     public Button[] btn;
-    
     private AudioSource source {get { return GetComponent<AudioSource>(); }}
 
  
 void Start()
-    {
-        
-   
-      
+    {     
         
     }
     public void Backtxt(int num)
