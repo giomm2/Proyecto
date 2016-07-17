@@ -5,7 +5,9 @@ public class ChangeCamera : MonoBehaviour
 {
     public Camera firstCamera;
     public Camera thirdCamera;
-    
+    public GameObject firstLight;
+    public GameObject thirdLight;
+   
 
     // Update is called once per frame
     void Update()
@@ -17,11 +19,15 @@ public class ChangeCamera : MonoBehaviour
 
                 thirdCamera.enabled = false;
                 firstCamera.enabled = true;
+                firstLight.SetActive(true);
+                thirdLight.SetActive(false);
             }
             else
             {
                 thirdCamera.enabled = true;
                 firstCamera.enabled = false;
+                firstLight.SetActive(false);
+                thirdLight.SetActive(true);
 
             }
         }

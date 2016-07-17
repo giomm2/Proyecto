@@ -5,7 +5,7 @@ public class Tips : MonoBehaviour
 {
 
     private int numLevel;
-    private string[] tip = { " YOU CAN CHANGE THE CAMERA USING C ", " YOU CAN OPEN DOORS USING Q ", " IF YOU LOOK THE ENEMY DON'T MOVE OR YOU WILL LOSE LIFE ", " YOU HAVE TIME TO COMPLETE ALL OBJECTIVES ", "IF THE TIME IS 0 YOU RETURN TO THE LAST CHECKPOINT ", "OBJECTIVE 1: FIND THIS PICTURE. " };
+    private string[] tip = { " You can change the camera using C ", " You can open doors using Q ", " If you open some house room, and Damian appear you lose life.", "Else you win life.", " You have to complete all objective ", "If the time is 0, you will return to the last checkpoint ", "OBJECTIVE 1: Find this picture. " };
     public Sprite[] img;
     public Image picture;
     public Text txtTips;
@@ -57,8 +57,13 @@ public class Tips : MonoBehaviour
             }
             else if (time0 == 50)
             {
-                picture.enabled = true;
                 txtTips.text = tip[5];
+
+            }
+            else if (time0 == 60)
+            {
+                picture.enabled = true;
+                txtTips.text = tip[6];
                 picture.sprite = img[2];
        
             }
@@ -69,7 +74,7 @@ public class Tips : MonoBehaviour
         }
         else if (numLevel != 1)
         {
-            txtTips.text = tip[5];
+            txtTips.text = tip[6];
             picture.sprite = img[2];
         }
 
@@ -78,12 +83,12 @@ public class Tips : MonoBehaviour
         {
 
             picture.sprite = img[3];
-            txtTips.text = " OBJECTIVE 2: NOW FIND THE KEY. ";
+            txtTips.text = " OBJECTIVE 2: Now find the key. ";
 
         }
         else if (pictureDamian.active == false && Key.active == false) {
             picture.enabled = false;
-            txtTips.text = " ESCAPE TO DAMIAN, FIND THE PRINCIPAL DOOR. ";
+            txtTips.text = " You try to scape from Damian, and find the front door. ";
         } 
 
     }
