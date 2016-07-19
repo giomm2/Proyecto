@@ -1,28 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Threading;
+using UnityEngine.UI;
 
 public class EnemyProximity : MonoBehaviour
 {
 
     // Use this for initialization
     public GameObject objects;
-    public string nameTrigger;
+    public GameObject damianLight;
+   
     public AudioClip audio;
     private AudioSource source { get { return GetComponent<AudioSource>(); } }
     private int timers;
     private int randomTime;
     private bool flagEnemy = true;
     private int enemyEntry;
-    private ChangeCamera camera = new ChangeCamera();
     public Camera firstCamera;
     public Camera thirdCamera;
     private System.Random random = new System.Random();
+
+   
+    private float Health = 100;
+    private int flagMove;
+    public Text text;
+    public Scrollbar scroll;
+    HealthLifeBar HealthBar = new HealthLifeBar();
 
     // Update is called once per frame
 
     void Start()
     {
+        HealthBar.setHealthLife(scroll);
         RandomTime();
 
     }
@@ -38,10 +47,12 @@ public class EnemyProximity : MonoBehaviour
     {
 
 
-        if (collider.name.Equals(nameTrigger))
+        if (collider.name.Equals("scareDamianKitchen")|| collider.name.Equals("scareDamianChildRoom") || collider.name.Equals("scareDamianPrincipalRoom")
+            ||collider.name.Equals("scareDamianStairsRoom") || collider.name.Equals("scareDamianLivingroom"))
         {
-
-            if ((int)Time.time >= timers && flagEnemy == true)
+             flagMove = random.Next(0, 50);
+            text.text = ("" + flagMove);
+            if ((int)Time.time >= timers && flagMove > 25)
             {
                 if (thirdCamera.enabled == true)
                 {
@@ -49,31 +60,42 @@ public class EnemyProximity : MonoBehaviour
                     firstCamera.enabled = true;
 
                 }
-                enemyEntry = (int)Time.time + 7;
+                enemyEntry = (int)Time.time + 4;
                 objects.SetActive(true);
+                damianLight.SetActive(true);
                 gameObject.AddComponent<AudioSource>();
                 source.clip = audio;
                 source.playOnAwake = false;
                 source.PlayOneShot(audio);
-                flagEnemy = false;
-
+                
 
                 if (randomTime == 1)
                 {
 
-                    timers = random.Next((int)Time.time, 350);
+                    Damage(10);
 
                 }
 
                 else if (randomTime == 2)
                 {
-                    timers = random.Next((int)Time.time, 230);
+                    Damage(20);
                 }
                 else
                 {
-                    timers = random.Next((int)Time.time, 60);
+                    Damage(50f); ;
 
                 }
+
+
+            }
+            else
+            {
+                if (Health < 100f)
+                {
+                    Life(10f);
+                }
+
+
             }
 
         }
@@ -82,24 +104,62 @@ public class EnemyProximity : MonoBehaviour
     void OnTriggerStay(Collider collider)
     {
 
-        if (collider.name.Equals(nameTrigger))
-        {
-
-            if ((int)Time.time == enemyEntry && flagEnemy == false)
+        if (collider.name.Equals("scareDamianKitchen") || collider.name.Equals("scareDamianChildRoom") || collider.name.Equals("scareDamianPrincipalRoom")
+            || collider.name.Equals("scareDamianStairsRoom") || collider.name.Equals("scareDamianLivingroom"))
+        { 
+            if ((int)Time.time >= timers)
             {
-                objects.SetActive(false);
-
-
-
+                if ((int)Time.time == enemyEntry )
+                {
+                    objects.SetActive(false);
+                    damianLight.SetActive(true);
+                }
 
             }
         }
 
     }
 
+    void OnTriggerExit(Collider collider)
+    {
 
 
-    public void RandomTime() {
+        if (collider.name.Equals("scareDamianKitchen") || collider.name.Equals("scareDamianChildRoom") || collider.name.Equals("scareDamianPrincipalRoom")
+             || collider.name.Equals("scareDamianStairsRoom") || collider.name.Equals("scareDamianLivingroom"))
+        {
+            objects.SetActive(false);
+            damianLight.SetActive(true);
+            flagMove = random.Next(0, 50);
+            text.text = ("" + flagMove);
+        }
+    }
+    public void Damage(float value)
+    {
+        if(Health > 0) {
+            Health -= value;
+            HealthBar.getHealthBar().size = Health / 100f;
+        }
+        if (Health < 0) {
+
+            Health = 0f;
+        }
+    }
+
+    public void Life(float value)
+    {
+        if (Health < 100f)
+        {          
+            Health += value;
+            HealthBar.getHealthBar().size = (Health / 100f);
+        }
+
+        if (Health > 100f)
+        {
+            Health = 100f;
+        }
+        }
+    public void RandomTime()
+    {
         Level level = new Level();
         randomTime = level.GetTimers();
 

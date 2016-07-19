@@ -22,7 +22,7 @@ public class Objective3 : MonoBehaviour
 
     void Start()
     {
-        Sounds sound = new Sounds();
+        
         maxdistance = 2;
 
     }
