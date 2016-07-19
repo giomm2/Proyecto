@@ -5,7 +5,8 @@ public class Tips : MonoBehaviour
 {
 
     private int numLevel;
-    private string[] tip = { " You can change the camera using C ", " You can open doors using Q ", " If you open some house room, and Damian appear you lose life.", "Else you win life.", " You have to complete all objective ", "If the time is 0, you will return to the last checkpoint ", "OBJECTIVE 1: Find this picture. " };
+    private string[] tip = { " You can change the camera using letter C. ", " You can open doors using letter Q. ", "Stay alert with the battery of the flashlight, using left click to activate it." ,"You have to complete all objective ",
+        "If the time's up, you will return to the last checkpoint. ","If you open some house room, and Damian appears you lose life.", "Else you win life.", "OBJECTIVE 1: Find this picture. " };
     public Sprite[] img;
     public Image picture;
     public Text txtTips;
@@ -60,10 +61,15 @@ public class Tips : MonoBehaviour
                 txtTips.text = tip[5];
 
             }
+            else if (time0 == 55)
+            {
+                txtTips.text = tip[6];
+
+            }
             else if (time0 == 60)
             {
                 picture.enabled = true;
-                txtTips.text = tip[6];
+                txtTips.text = tip[7];
                 picture.sprite = img[2];
        
             }
@@ -74,7 +80,7 @@ public class Tips : MonoBehaviour
         }
         else if (numLevel != 1)
         {
-            txtTips.text = tip[6];
+            txtTips.text = tip[7];
             picture.sprite = img[2];
         }
 
