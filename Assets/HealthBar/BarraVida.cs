@@ -9,8 +9,16 @@ public class BarraVida : MonoBehaviour
     public float Health = 100;
     public void Damage(float value)
     {
-        Health -= value;
-        HealthBar.size = Health / 100f;
+        if (Health > 0)
+        {
+            Health -= value;
+            HealthBar.size = Health / 100f;
+        }
+        if (Health < 0)
+        {
+
+            Health = 0f;
+        }
     }
     public void Life(float value)
     {
@@ -22,7 +30,6 @@ public class BarraVida : MonoBehaviour
     {
         GameObject.Find("Milagro");
         Damage(50);
-       
     }
 
     

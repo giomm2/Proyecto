@@ -37,7 +37,7 @@ public class PictureMovement : MonoBehaviour
                 source.playOnAwake = false;
                 source.PlayOneShot(audio);
                 Flag = false;
-
+                /*
                 if (randomTime == 1)
                 {
 
@@ -54,7 +54,7 @@ public class PictureMovement : MonoBehaviour
                     timer = random.Next((int)Time.time, 60);
 
                 }
-
+                */
             }
         }
 
