@@ -21,7 +21,13 @@ ModelImporter:
     resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    animationImportErrors: 
+    animationImportErrors: '
+
+      Imported file ''Bullet762'' conversion failed: Required human bone ''Hips''
+      not found
+
+
+'
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
@@ -58,12 +64,7 @@ ModelImporter:
   copyAvatar: 0
   humanDescription:
     human: []
-    skeleton:
-    - name: Bullet762(Clone)
-      position: {x: -0, y: 0.02803572, z: 0.0025262572}
-      rotation: {x: -0.5, y: 0.5, z: 0.49999994, w: 0.50000006}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
+    skeleton: []
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -74,7 +75,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
