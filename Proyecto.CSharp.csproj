@@ -71,12 +71,18 @@
   <ItemGroup>
     <Compile Include="Assets\HealthBar\BarraVida.cs" />
     <Compile Include="Assets\HealthBar\HealthLifeBar.cs" />
+    <Compile Include="Assets\MiniMap\Scripts\InnerMap.cs" />
+    <Compile Include="Assets\MiniMap\Scripts\MapArrow.cs" />
+    <Compile Include="Assets\MiniMap\Scripts\MapCanvasController.cs" />
+    <Compile Include="Assets\MiniMap\Scripts\MapMarker.cs" />
+    <Compile Include="Assets\MiniMap\Scripts\MarkerGroup.cs" />
     <Compile Include="Assets\MultiplayerScripts\Billboard.cs" />
     <Compile Include="Assets\MultiplayerScripts\Bullet.cs" />
     <Compile Include="Assets\MultiplayerScripts\EnemySpawner.cs" />
     <Compile Include="Assets\MultiplayerScripts\Health.cs" />
     <Compile Include="Assets\MultiplayerScripts\MovementShooting.cs" />
     <Compile Include="Assets\MultiplayerScripts\PlayerController.cs" />
+    <Compile Include="Assets\MultiplayerScripts\Radar.cs" />
     <Compile Include="Assets\Scripts\Cargado.cs" />
     <Compile Include="Assets\Scripts\CargarPartida.cs" />
     <Compile Include="Assets\Scripts\ChangeScene.cs" />
