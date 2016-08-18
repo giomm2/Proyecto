@@ -11,7 +11,7 @@ public class Sounds : MonoBehaviour
     private AudioSource source { get { return GetComponent<AudioSource>(); } }
     private bool flag=true;
     private int randomTime;
-    private System.Random random = new System.Random();
+    //private System.Random random = new System.Random();
     // Use this for initialization
     void Start()
     {
